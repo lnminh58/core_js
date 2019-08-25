@@ -52,17 +52,7 @@ const passParamsFunc = (params, callback) => {
   callback();
 };
 
-<<<<<<< HEAD
-const passParamsFunc = (param, callback) => {
-  console.log(param, callback);
-  callback();
-};
 passParamsFunc({ name: 'aloalo', age: 15, address: 'NewYork' }, () => {
   console.log('done');
   console.log('Blo');
 });
-=======
-const doWhileDone = () => console.log('done!!!!')
-
-passParamsFunc({ name: 'John', age: 18, address: 'washington' }, doWhileDone);
->>>>>>> 3b86fbadea58227f24dc5be7069b559398dd82ac
