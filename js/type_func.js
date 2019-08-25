@@ -40,7 +40,15 @@ a = {
 a.getNameArrow();
 a.getName();
 
-
-(function (person) {
+(function(person) {
   console.log('name: ', person);
-})('name')
+})('name');
+
+const passParamsFunc = (param, callback) => {
+  console.log(param, callback);
+  callback();
+};
+passParamsFunc({ name: 'aloalo', age: 15, add: 'NewYork' }, () => {
+  console.log('done');
+  console.log('Blo');
+});
