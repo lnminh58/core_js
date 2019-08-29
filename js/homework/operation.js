@@ -175,36 +175,40 @@
 // backFirstPosition(3);
 // console.log('New array: ', intArr);
 
-//Bài 273: Xóa tất cả các số âm trong mảng >>>>>>>>>>đang không đúng
+// Bài 276: Xóa tất cả các phần tử trùng với x
 
 // let intArr = [Math.floor(Math.random()  1000) - 500, Math.floor(Math.random()  1000) - 500, Math.floor(Math.random()  1000) - 500, Math.floor(Math.random()  1000) - 500, Math.floor(Math.random()  1000) - 500, Math.floor(Math.random()  1000) - 500]
+// let intArr = [6, 4, 8, 7, 9];
 // console.log(intArr);
-// deleteNegative = function () {
+// const deleteDuplicate = function(x) {
+//   for (let index = 0; index < intArr.length; index++) {
+//     if ((intArr[index] === x)) {
+//       intArr.splice(1, index);
+//     }
+//   }
+// };
+// deleteDuplicate(6);
+// console.log('Before delete duplicate Number', intArr);
+
+//Bài 273: Xóa tất cả các số âm trong mảng >>>>>>>>>>đang không đúng
+
+const intArr = [...Array(10)].map(item => parseInt((Math.random() - 0.5) * 100));
+console.log(intArr);
+
+// deleteNegative = function (arr = []) {
 //     // intArr.forEach(element => {
 //     //     if (element<0) {
 //     //         element=0;
 //     //     }
 //     // });
-//     for (let index = 0; index < intArr.length; index++) {
-//         if (intArr[index] < 0) {
-//             intArr.splice(1, index);
-//         }
-//     }
+
+//     // arr.forEach((element, index) => {
+//     //   element > 0 && positiveArr.push(element)
+//     // });
+
+//     return arr.filter((element, index) => element > 0);
 // }
-// deleteNegative();
-// console.log('positive Array: ', intArr)
+deleteNegative = arr => arr.filter((element, index) => element > 0);
 
-// Bài 276: Xóa tất cả các phần tử trùng với x
-
-// let intArr = [Math.floor(Math.random()  1000) - 500, Math.floor(Math.random()  1000) - 500, Math.floor(Math.random()  1000) - 500, Math.floor(Math.random()  1000) - 500, Math.floor(Math.random()  1000) - 500, Math.floor(Math.random()  1000) - 500]
-let intArr = [6, 4, 8, 7, 9];
-console.log(intArr);
-const deleteDuplicate = function(x) {
-  for (let index = 0; index < intArr.length; index++) {
-    if ((intArr[index] = x)) {
-      intArr.splice(1, index);
-    }
-  }
-};
-deleteDuplicate(6);
-console.log('Before delete duplicate Number', intArr);
+const arr = deleteNegative(intArr);
+console.log('positive Array: ', intArr, arr);
