@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alpha Test</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+</head>
+
+<body>
+    <script src="./vuejs.js"></script>
+    <div id="app">
+        <!-- <input type="text" v-on:input="changeTitle"> -->
+        <h1 v-once>{{ title }}</h1>
+        <p>{{ sayHello() }} - <a v-bind:href="link">Facebook</a></p>
+        <button v-on:click="increase(3)">Counter</button>
+        <p>{{ counter }}</p>
+        <p v-on:mousemove="updateCoordinates">
+            UpdateCoordinates: {{ x }}/{{ y }} - 
+            <span v-on:mousemove>DEAD AREA</span>
+        </p>
+        <p>Block keyup:</p>
+        <input type="text" v-on:keyup.enter.space="RedAlert">
+        <hr>
+        <p v-html="finishlink"></p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                title: 'MU ONLINE',
+                link: 'https://facebook.com',
+                finishlink: '<a href="https://facebook.com">Contact<a>',
+                counter: 0,
+                x: 0,
+                y: 0
+            },
+            methods: {
+                changeTitle: function (event) {
+                    this.title = event.target.value;
+                },
+                sayHello: function () {
+                    this.title = 'Hello!'
+                    return this.title;
+                },
+                increase: function (step) {
+                    this.counter+=step;
+                },
+                updateCoordinates: function(event){
+                    this.x=event.clientX;
+                    this.y=event.clientY;
+                },
+                RedAlert: function(){
+                    alert('Alert!!!');
+                }
+
+            },
+        });
+    </script>
+</body>
+
+</html>
