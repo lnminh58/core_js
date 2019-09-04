@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./4_2_style.css">  
+    <link rel="stylesheet" href="./4_2_foundation.min.css">  
+    <script src="https://cpmcdn.com/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+
+</head>
+<body>
+    <div id="app">
+        <section class="row">
+            <div class="small-6 columns">
+                <h1 class="text-center">YOU</h1>
+                <div class="healthbar">
+                    <div class="healthbar text-center" style="background-color: green; margin: 0; color: white">
+                    {{ playerHealth }}
+                    </div>
+                </div>
+            </div>
+            <div class="small-6 columns">
+                <h1 class="text-center">MONSTER</h1>
+                <div class="healthbar">
+                    <div class="healthbar text-center" style="background-color: green; margin: 0; color: white">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="row controls">
+            <div class="small-12 columns">
+                <button id="start-game">Start New Game</button>
+            </div>
+        </section>
+        <section class="row controls">
+            <div class="small-12 columns">
+                <button id="attack">ATTACK</button>
+                <button id="special-attack">SPECIAL ATTACK</button>
+                <button id="heal">HEAL</button>
+                <button id="give-up">GIVE UP</button>
+            </div>
+        </section>
+        <section class="row-log">
+            <div class="small-12 columns">
+                <ul>
+                   <li>
+                       
+                   </li> 
+                </ul>
+            </div>
+        </section>
+    </div>
+    <script src="./4_2type_func.js"></script>
+</body>
+</html>

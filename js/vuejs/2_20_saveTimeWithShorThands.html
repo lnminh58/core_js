@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <script src="./vuejs.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="changeLink">click to change Link</button>
+        <a :href="link">Link</a>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                link: 'http://webmail.co-well.com.vn/src/webmail.php'
+            },
+            methods: {
+                changeLink: function () {
+                    this.link = 'https://www.facebook.com/'
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

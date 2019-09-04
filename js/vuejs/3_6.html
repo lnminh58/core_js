@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./2_25.css">
+    <title>Dynamic styling with CSS</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+    <script src="./vuejs.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(ingredient, i) in ingredients" :key="ingredient">{{ ingredient }} ({{ i }})</li>
+        </ul>
+        <button @click="ingredients.push('Eft')">Add New</button>
+        <hr>
+        <ul>
+            <li v-for="person in persons">
+                <div v-for="(value, key, index) in person"> {{ key }}: {{ value }} ({{index}})</div>
+            </li>
+        </ul>
+        <span v-for="n in 5">{{ n }},</span>
+        <hr>
+        <template v-for="(ingredient, i) in ingredients">
+            <h1>{{ ingredient }}</h1>
+            <p>{{ i }}</p>
+        </template>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                ingredients: ['Dark Wirdza','Dark Knight', 'Dark Lord'],
+                persons: [
+                    {name: 'Xeko', age: 112, color: 'red'},
+                    {name: 'Xuka', age: 120, color: 'Green'},
+                ]
+            },
+            
+        });
+    </script>
+</body>
+
+</html>

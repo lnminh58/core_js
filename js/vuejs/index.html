@@ -17,13 +17,16 @@
         <h1 v-once>{{ title }}</h1>
         <p>{{ sayHello() }} - <a v-bind:href="link">Facebook</a></p>
         <button v-on:click="increase(3)">Counter</button>
-        <p>{{ counter }}</p>
+        <button v-on:click="counter--">Counter</button>
+        <p>{{ counter * 2 > 10 ? 'greate than 10' : 'smaller than 10' }}</p>
         <p v-on:mousemove="updateCoordinates">
             UpdateCoordinates: {{ x }}/{{ y }} - 
             <span v-on:mousemove>DEAD AREA</span>
         </p>
         <p>Block keyup:</p>
         <input type="text" v-on:keyup.enter.space="RedAlert">
+        <input type="text" v-model="name">
+        <p>{{ name }}</p>
         <hr>
         <p v-html="finishlink"></p>
     </div>
@@ -36,7 +39,8 @@
                 finishlink: '<a href="https://facebook.com">Contact<a>',
                 counter: 0,
                 x: 0,
-                y: 0
+                y: 0,
+                name: 'Max'
             },
             methods: {
                 changeTitle: function (event) {
